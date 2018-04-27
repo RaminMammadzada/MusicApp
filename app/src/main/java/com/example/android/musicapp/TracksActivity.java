@@ -32,24 +32,29 @@ public class TracksActivity extends AppCompatActivity {
         TextView currentAlbumAbout = (TextView) findViewById( R.id.element_about);
         currentAlbumAbout.setVisibility( View.GONE );
 
+        // don't show play icon in the track list of the current album
+        ImageView playIcon = (ImageView) findViewById( R.id.play_icon);
+        playIcon.setVisibility( View.GONE );
+
 
         TrackAdapter adapter = new TrackAdapter( this, tracks);
 
         ListView listView = (ListView) findViewById( R.id.list );
         listView.setAdapter( adapter );
 
-/*        listView.setOnItemClickListener( new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener( new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Track track = tracks.get( position );
-
-                Intent intent = new Intent( TracksActivity.this, AlbumsActivity.class );
-                intent.putExtra( "albumObject", (Serializable) album );
-                startActivity( intent );
+                if(track != null) {
+                    Intent intent = new Intent( TracksActivity.this, NowPlayingActivity.class );
+                    intent.putExtra( "trackObject", track );
+                    startActivity( intent );
+                }
 
             }
-        } );*/
+        } );
     }
 
 }

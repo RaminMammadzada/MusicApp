@@ -51,6 +51,10 @@ public class AlbumAdapter extends ArrayAdapter<Album>{
         TextView aboutTextView = (TextView) listItemView.findViewById( R.id.element_about );
         aboutTextView.setVisibility( View.GONE );
 
+        // don't show play icon in album list
+        ImageView playIcon = (ImageView) listItemView.findViewById( R.id.play_icon);
+        playIcon.setVisibility( View.GONE );
+
         return listItemView;
     }
 }

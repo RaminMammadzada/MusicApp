@@ -31,6 +31,9 @@ public class AlbumsActivity extends AppCompatActivity {
         currentArtistName.setText( artist.getmArtistFullname() );
         TextView currentArtistAbout = (TextView) findViewById( R.id.element_about);
         currentArtistAbout.setText( artist.getmArtistAbout() );
+        // don't show play icon in album list of the current artist
+        ImageView playIcon = (ImageView) findViewById( R.id.play_icon);
+        playIcon.setVisibility( View.GONE );
 
 
         AlbumAdapter adapter = new AlbumAdapter( this, albums );

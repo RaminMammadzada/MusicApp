@@ -50,6 +50,10 @@ public class ArtistAdapter extends ArrayAdapter<Artist>{
         TextView aboutTextView = (TextView) listItemView.findViewById( R.id.element_about );
         aboutTextView.setText( currentArtist.getmArtistAbout() );
 
+        // don't show play icon in artist list
+        ImageView playIcon = (ImageView) listItemView.findViewById( R.id.play_icon);
+        playIcon.setVisibility( View.GONE );
+
         return listItemView;
     }
 }

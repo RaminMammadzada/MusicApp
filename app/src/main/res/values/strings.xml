@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MusicApp</string>
+    <string name="playing_track">This track is playing</string>
+    <string name="duration">Duration:</string>
 </resources>

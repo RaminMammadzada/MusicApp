@@ -33,6 +33,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ArtistsActivity"/>
         </activity>
+        <activity android:name=".NowPlayingActivity"
+            android:label="Track"
+            android:parentActivityName=".TracksActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ArtistsActivity"/>
+        </activity>
     </application>
 
 </manifest>
