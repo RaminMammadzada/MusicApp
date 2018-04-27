@@ -34,7 +34,7 @@ public class AlbumAdapter extends ArrayAdapter<Album>{
         albumName.setText( currentAlbum.getmAlbumTitle() );
 
         // Find the imageview on the list_item.xml layout with the image ID and set the current artist's image to it
-        ImageView albumImageView = (ImageView) listItemView.findViewById( R.id.artist_image_view );
+        ImageView albumImageView = (ImageView) listItemView.findViewById( R.id.element_image_view );
 
         if(currentAlbum.albumHasImage()) {
             // Set the ImageView to the image resource specified in the current Word

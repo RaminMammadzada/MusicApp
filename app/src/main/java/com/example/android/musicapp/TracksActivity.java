@@ -24,6 +24,15 @@ public class TracksActivity extends AppCompatActivity {
 
         final ArrayList<Track> tracks = album.getmTracks();
 
+        // banner image, name and bio of current album
+        ImageView currentAlbumImage = (ImageView) findViewById( R.id.element_image_view );
+        currentAlbumImage.setImageResource(album.getmAlbumImageResourceId());
+        TextView currentAlbumName = (TextView) findViewById( R.id.element_name );
+        currentAlbumName.setText( album.getmAlbumTitle() );
+        TextView currentAlbumAbout = (TextView) findViewById( R.id.element_about);
+        currentAlbumAbout.setVisibility( View.GONE );
+
+
         TrackAdapter adapter = new TrackAdapter( this, tracks);
 
         ListView listView = (ListView) findViewById( R.id.list );

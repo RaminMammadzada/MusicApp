@@ -33,7 +33,7 @@ public class ArtistAdapter extends ArrayAdapter<Artist>{
         artistName.setText( currentArtist.getmArtistFullname() );
 
         // Find the imageview on the list_item.xml layout with the image ID and set the current artist's image to it
-        ImageView imageView = (ImageView) listItemView.findViewById( R.id.artist_image_view );
+        ImageView imageView = (ImageView) listItemView.findViewById( R.id.element_image_view );
 
         if(currentArtist.artistHasImage()) {
             // Set the ImageView to the image resource specified in the current Word

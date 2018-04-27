@@ -25,7 +25,7 @@ public class AlbumsActivity extends AppCompatActivity {
         final ArrayList<Album> albums = artist.getmAlbums();
 
         // banner image, name and bio of current artist
-        ImageView currentArtistImage = (ImageView) findViewById( R.id.artist_image_view );
+        ImageView currentArtistImage = (ImageView) findViewById( R.id.element_image_view );
         currentArtistImage.setImageResource(artist.getmArtistImageResourceId());
         TextView currentArtistName = (TextView) findViewById( R.id.element_name );
         currentArtistName.setText( artist.getmArtistFullname() );

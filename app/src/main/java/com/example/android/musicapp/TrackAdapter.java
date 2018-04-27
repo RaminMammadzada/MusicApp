@@ -32,9 +32,20 @@ public class TrackAdapter extends ArrayAdapter<Track> {
 
         Track currentTrack = getItem( position );
 
-        TextView artistName = (TextView) listItemView.findViewById( R.id.element_name );
+        // Find the textview on the list_item.xml layout with the text ID and set the current track'' name to it
+        TextView currentTrackName = (TextView) listItemView.findViewById( R.id.element_name );
+        currentTrackName.setText( currentTrack.getmTrackName() );
 
-        artistName.setText( currentTrack.getmTrackName() );
+        // Find the imageview on the list_item.xml layout with the image ID and set the current track's image GONE,
+        // because track doesn't have image.
+        ImageView currentTrackImage = (ImageView) listItemView.findViewById( R.id.element_image_view );
+        currentTrackImage.setVisibility(View.GONE);
+
+        // Find the textview on the list_item.xml layout with the text ID and set the current track's about text GONE,
+        // because track doesn't have about text.
+        TextView currentTrackAbout = (TextView) listItemView.findViewById( R.id.element_about );
+        currentTrackAbout.setVisibility( View.GONE );
+
 
         return listItemView;
     }
