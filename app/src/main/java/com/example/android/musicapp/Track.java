@@ -12,8 +12,8 @@ public class Track extends Album{
         this.mDurationInMillisecond = mDurationInMillisecond;
     }
 
-    public Track(String artistFullname, String artistAbout, String title, String mTrackName, int mDurationInMillisecond, ArrayList<Track> tracks) {
-        super( artistFullname, artistAbout, title, tracks);
+    public Track(String artistFullname, String artistAbout, int artistImage, String title, String mTrackName, int mDurationInMillisecond, ArrayList<Track> tracks) {
+        super( artistFullname, artistAbout, artistImage, title, tracks);
         this.mTrackName = mTrackName;
         this.mDurationInMillisecond = mDurationInMillisecond;
     }

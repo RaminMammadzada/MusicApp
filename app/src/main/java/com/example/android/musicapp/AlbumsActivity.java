@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -22,6 +23,15 @@ public class AlbumsActivity extends AppCompatActivity {
         Artist artist = (Artist) intent.getSerializableExtra( "artistObject" );
 
         final ArrayList<Album> albums = artist.getmAlbums();
+
+        // banner image, name and bio of current artist
+        ImageView currentArtistImage = (ImageView) findViewById( R.id.artist_image_view );
+        currentArtistImage.setImageResource(artist.getmArtistImageResourceId());
+        TextView currentArtistName = (TextView) findViewById( R.id.element_name );
+        currentArtistName.setText( artist.getmArtistFullname() );
+        TextView currentArtistAbout = (TextView) findViewById( R.id.element_about);
+        currentArtistAbout.setText( artist.getmArtistAbout() );
+
 
         AlbumAdapter adapter = new AlbumAdapter( this, albums );
 

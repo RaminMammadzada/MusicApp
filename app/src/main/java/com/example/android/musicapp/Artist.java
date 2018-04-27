@@ -10,6 +10,32 @@ public class Artist implements Serializable{
     private String mArtistFullname = "";
     private String mArtistAbout = "";
     private ArrayList<Album> mAlbums = new ArrayList<>(  );
+    private static final int NO_IMAGE_PROVIDED = -1;
+
+    /** Image resource ID for the word */
+    private int mArtistImageResourceId = NO_IMAGE_PROVIDED;
+
+    /**
+     * Returns whether or not there is an image for this word
+     */
+    public boolean artistHasImage(){
+        return mArtistImageResourceId != NO_IMAGE_PROVIDED;
+    }
+
+    public int getmArtistImageResourceId() {
+        return mArtistImageResourceId;
+    }
+
+    public void setmArtistImageResourceId(int mImageResourceId) {
+        this.mArtistImageResourceId = mImageResourceId;
+    }
+
+
+    public Artist(String artistFullname, String artistAbout, int artistImage) {
+        mArtistFullname = artistFullname;
+        mArtistAbout = artistAbout;
+        mArtistImageResourceId = artistImage;
+    }
 
     public Artist(String artistFullname, String artistAbout) {
         mArtistFullname = artistFullname;
@@ -27,11 +53,11 @@ public class Artist implements Serializable{
         this.mArtistFullname = mArtistFullname;
     }
 
-    public String getmAbout() {
+    public String getmArtistAbout() {
         return mArtistAbout;
     }
 
-    public void setmAbout(String mAbout) {
+    public void setmArtistAbout(String mAbout) {
         this.mArtistAbout = mAbout;
     }
 

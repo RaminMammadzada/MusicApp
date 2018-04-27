@@ -4,16 +4,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/overall_background">
+
+    <include layout="@layout/list_item">
+
+    </include>
 
     <TextView
-        android:id="@+id/albums_text_view"
+        android:id="@+id/artists_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Albums.."
-        android:textSize="20dp"
-        android:textColor="@color/colorPrimary"/>
+        android:layout_margin="15dp"
+        android:text="Last albums: "
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textColor="@color/pure_white"/>
 
     <include layout="@layout/element_list"/>
 

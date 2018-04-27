@@ -4,17 +4,25 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#333333">
 
     <TextView
         android:id="@+id/artists_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Artists.."
+        android:text="ALL OF THE ARTISTS"
         android:textSize="20dp"
-        android:textColor="@color/colorPrimary"/>
+        android:padding="8dp"
+        android:textColor="#EEEEEE"
+        android:textStyle="bold"/>
+
 
     <include layout="@layout/element_list"/>
 
+
+
 </LinearLayout>
+
+
