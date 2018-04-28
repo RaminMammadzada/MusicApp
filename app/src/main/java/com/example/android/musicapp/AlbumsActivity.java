@@ -14,6 +14,8 @@ import java.util.ArrayList;
 
 public class AlbumsActivity extends AppCompatActivity {
 
+    static Artist staticArtist;
+
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -22,15 +24,19 @@ public class AlbumsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Artist artist = (Artist) intent.getSerializableExtra( "artistObject" );
 
-        final ArrayList<Album> albums = artist.getmAlbums();
+        if(artist != null){
+            staticArtist = artist;
+        }
+
+        final ArrayList<Album> albums = staticArtist.getmAlbums();
 
         // banner image, name and bio of current artist
         ImageView currentArtistImage = (ImageView) findViewById( R.id.element_image_view );
-        currentArtistImage.setImageResource(artist.getmArtistImageResourceId());
+        currentArtistImage.setImageResource(staticArtist.getmArtistImageResourceId());
         TextView currentArtistName = (TextView) findViewById( R.id.element_name );
-        currentArtistName.setText( artist.getmArtistFullname() );
+        currentArtistName.setText( staticArtist.getmArtistFullname() );
         TextView currentArtistAbout = (TextView) findViewById( R.id.element_about);
-        currentArtistAbout.setText( artist.getmArtistAbout() );
+        currentArtistAbout.setText( staticArtist.getmArtistAbout() );
         // don't show play icon in album list of the current artist
         ImageView playIcon = (ImageView) findViewById( R.id.play_icon);
         playIcon.setVisibility( View.GONE );

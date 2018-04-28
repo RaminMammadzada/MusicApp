@@ -14,6 +14,8 @@ import java.util.ArrayList;
 
 public class TracksActivity extends AppCompatActivity {
 
+    static Album staticAlbum;
+
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -21,14 +23,17 @@ public class TracksActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Album album = (Album) intent.getSerializableExtra( "albumObject" );
+        if(album != null) {
+            staticAlbum = album;
+        }
 
-        final ArrayList<Track> tracks = album.getmTracks();
+        final ArrayList<Track> tracks = staticAlbum.getmTracks();
 
         // banner image, name and bio of current album
         ImageView currentAlbumImage = (ImageView) findViewById( R.id.element_image_view );
-        currentAlbumImage.setImageResource(album.getmAlbumImageResourceId());
+        currentAlbumImage.setImageResource(staticAlbum.getmAlbumImageResourceId());
         TextView currentAlbumName = (TextView) findViewById( R.id.element_name );
-        currentAlbumName.setText( album.getmAlbumTitle() );
+        currentAlbumName.setText( staticAlbum.getmAlbumTitle() );
         TextView currentAlbumAbout = (TextView) findViewById( R.id.element_about);
         currentAlbumAbout.setVisibility( View.GONE );
 

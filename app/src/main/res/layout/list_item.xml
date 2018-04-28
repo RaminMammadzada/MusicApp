@@ -7,7 +7,7 @@
     android:orientation="horizontal"
     android:padding="20dp"
     android:background="@color/list_item_background"
-    android:layout_marginTop="30dp">
+    android:layout_marginTop="5dp">
 
     <ImageView
         android:id="@+id/element_image_view"
